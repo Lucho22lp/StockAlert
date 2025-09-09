@@ -1,0 +1,7 @@
+product_id,name,category,shelf_life_days,reorder_point,reorder_qty,unit_cost,current_stock
+P001,Café Molido 250g,Alimentos,180,30,50,2000,28
+P002,Leche Entera 1L,Lácteos,12,40,80,900,55
+P003,Yogur Natural 190g,Lácteos,18,50,100,600,48
+P004,Harina 1kg,Alimentos,365,25,40,1200,60
+P005,Galletitas 150g,Snacks,240,35,70,700,20
+P006,Jugo Naranja 1L,Bebidas,120,20,40,800,18
