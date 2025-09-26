@@ -1,0 +1,8 @@
+[
+  {"product_id":"P001","name":"Café Molido 250g","category":"Alimentos","shelf_life_days":180,"reorder_point":30,"reorder_qty":50,"unit_cost":2000,"current_stock":28,"avg_7d":13},
+  {"product_id":"P002","name":"Leche Entera 1L","category":"Lácteos","shelf_life_days":12,"reorder_point":40,"reorder_qty":80,"unit_cost":900,"current_stock":55,"avg_7d":25},
+  {"product_id":"P003","name":"Yogur Natural 190g","category":"Lácteos","shelf_life_days":18,"reorder_point":50,"reorder_qty":100,"unit_cost":600,"current_stock":48,"avg_7d":19},
+  {"product_id":"P004","name":"Harina 1kg","category":"Alimentos","shelf_life_days":365,"reorder_point":25,"reorder_qty":40,"unit_cost":1200,"current_stock":60,"avg_7d":6},
+  {"product_id":"P005","name":"Galletitas 150g","category":"Snacks","shelf_life_days":240,"reorder_point":35,"reorder_qty":70,"unit_cost":700,"current_stock":20,"avg_7d":12},
+  {"product_id":"P006","name":"Jugo Naranja 1L","category":"Bebidas","shelf_life_days":120,"reorder_point":20,"reorder_qty":40,"unit_cost":800,"current_stock":18,"avg_7d":11}
+]

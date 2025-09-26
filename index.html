@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>StockAlert · Robot (Gemini)</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Arial;margin:16px}
+    header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+    .pill{border:1px solid #ddd;border-radius:999px;padding:2px 8px}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .card{border:1px solid #ddd;border-radius:12px;padding:12px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+    table{width:100%;border-collapse:collapse}
+    th,td{border-bottom:1px solid #eee;padding:6px;text-align:left}
+    button,input,select,textarea{padding:8px 12px;border-radius:8px;border:1px solid #ddd}
+    button.primary{background:#111;color:#fff;border-color:#111;cursor:pointer}
+    .ok{color:#0a7}.warn{color:#e67e22}.bad{color:#e74c3c}.muted{color:#666}
+    textarea{width:100%;min-height:140px}
+  </style>
+</head>
+<body>
+<header>
+  <h1>StockAlert · Robot</h1>
+  <span class="pill">Gemini</span>
+</header>
+
+<section class="card">
+  <h3>Configuración</h3>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <select id="variant" title="Variante de prompt">
+      <option value="fast01">Fast-01 (Schema)</option>
+      <option value="fast02">Fast-02 (Few-shot + reglas)</option>
+      <option value="baseline">Baseline</option>
+    </select>
+    <input id="batchSize" type="number" value="10" min="1" max="50" title="SKUs por llamada">
+    <label><input type="checkbox" id="mockMode" checked> Modo mock</label>
+    <button id="runBtn" class="primary">Evaluar stock</button>
+    <button id="genPosterBtn">Generar prompt de cartel</button>
+  </div>
+  <small class="muted">Abrí con Live Server en VS Code. Editá <code>products.json</code> o <code>fetchProducts()</code> si usás una API real.</small>
+
+  <div style="margin-top:10px">
+    <label class="muted">Prompt de imagen (pegalo en NightCafe u otra):</label>
+    <textarea id="posterPrompt" readonly></textarea>
+  </div>
+</section>
+
+<section class="row">
+  <div class="card" style="flex:2">
+    <h3>Productos</h3>
+    <div id="productsInfo" class="muted">Cargando...</div>
+    <div style="overflow:auto;max-height:260px;border:1px solid #eee;border-radius:8px">
+      <table id="productsTable"></table>
+    </div>
+  </div>
+  <div class="card" style="flex:1">
+    <h3>Prompt (preview)</h3>
+    <textarea id="promptPreview" readonly></textarea>
+  </div>
+</section>
+
+<section class="card">
+  <h3>Resultados</h3>
+  <div id="stats" class="muted">Sin ejecutar.</div>
+  <div class="grid" id="cards"></div>
+</section>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
